@@ -7,6 +7,7 @@ function uploadImage() {
 
     const fileInput = document.getElementById('chooseFile');
     const image = fileInput.files[0];
+    console.log(image.name)
 
     const formData = new FormData();
     formData.append("image_file", image);
@@ -23,7 +24,13 @@ function uploadImage() {
     }).then((res) => {
         return res.blob();
     }).then((data) => {
-        console.log(data)
+        console.log(data);
+        const obURL = URL.createObjectURL(data);
+        const img = document.createElement('img');
+        img.src = obURL;
+        const viewDiv2 = document.getElementById('bg-img-view');
+        viewDiv2.appendChild(img);
+
     }).catch((err) => {
         console.log(err + "this error was catch")
     })
