@@ -1,6 +1,7 @@
 console.warn("This is a CodeClause Internship project no1 ");
 console.log("Image Background Remover");
 
+let imgURL;
 
 function uploadImage() {
     //    alert("Uplaod btn clicked")
@@ -26,6 +27,7 @@ function uploadImage() {
     }).then((data) => {
         console.log(data);
         const obURL = URL.createObjectURL(data);
+        imgURL = obURL;
         const img = document.createElement('img');
         img.src = obURL;
         const viewDiv2 = document.getElementById('bg-img-view');
@@ -34,4 +36,15 @@ function uploadImage() {
     }).catch((err) => {
         console.log(err + "this error was catch")
     })
+}
+
+function downloadFile(){
+    const anchor = document.createElement('a');
+    anchor.href = imgURL;
+    anchor.download = 'No-bg.png';
+    const viewDiv = document.getElementById('bg-img-view');
+    viewDiv.appendChild(anchor);
+
+    anchor.click();
+    viewDiv.removeChild(a)
 }
