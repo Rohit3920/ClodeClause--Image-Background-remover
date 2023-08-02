@@ -38,7 +38,7 @@ function uploadImage() {
     })
 }
 
-function downloadFile(){
+function downloadFile() {
     const anchor = document.createElement('a');
     anchor.href = imgURL;
     anchor.download = 'No-bg.png';
@@ -47,4 +47,25 @@ function downloadFile(){
 
     anchor.click();
     viewDiv.removeChild(a)
+}
+
+
+const mode = () => {
+    const body = document.body.classList;
+    const navBar = document.getElementById('navBar').classList;
+    const modeBtn = document.getElementById('modeBtn');
+    const btnCls = modeBtn.classList;
+    modeBtn.style.outline = 'none';
+
+    if (body == "light") {
+        navBar.add('navbar-dark');
+        body.add("dark");
+        btnCls.add("bg-info");
+        modeBtn.innerHTML = "Light Mode";
+    } else {
+        navBar.remove('navbar-dark');
+        body.remove("dark");
+        btnCls.remove("bg-info");
+        modeBtn.innerHTML = "Dark Mode";
+    }
 }

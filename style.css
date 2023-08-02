@@ -1,0 +1,33 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+#bg-img-view img{
+    margin: 2em;
+    border: 1px solid black;
+    border-radius: 2em;
+    box-shadow: 0 0 20px white;
+    background: radial-gradient( #ccc, #2196F3 );
+}
+
+.dark nav{
+    background-color: rgb(42, 42, 42);
+    color: white;
+}
+
+.dark nav a {
+    color: white;
+}
+
+body.dark{
+    background-color: rgb(70, 70, 70);
+    color: white;
+}
+
+.dark .form-control{
+    background-color: rgb(50, 49, 49);
+    color: white;
+}
